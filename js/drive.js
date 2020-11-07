@@ -6,9 +6,7 @@ visualList = new LinkedList();
 var tried = 0;
 var faild = 0;
 var hits = 0;
-r = new RandomManager();
-
-var dificultad = 0.50;
+var dificult = 0.9;
 
 
 function setAlphabetToLinkedList(){
@@ -28,7 +26,7 @@ function getElementsFromLinkedList(){
     }  
 }
 
-function jugar(){
+function play(){
     
 
     word = (document.getElementById("palabra").value).toUpperCase();
@@ -72,7 +70,7 @@ function push(i){
         return true;
     }
     
-    if(faild == Math.floor(wordList.length()*dificultad)){
+    if(faild == Math.floor(wordList.length()*dificult)){
         $('#resultado').modal('show');
         document.getElementById("txt-fin").innerHTML = 
         `
@@ -148,7 +146,5 @@ function updateText(){
     `
 }
 
-
-//addRandomToLinkedList();
 setAlphabetToLinkedList();
 getElementsFromLinkedList();
